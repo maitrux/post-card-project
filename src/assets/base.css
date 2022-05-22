@@ -10,4 +10,20 @@
   font-weight: bold;
 }
 
+/* Buttons */
 
+.button {
+  background-color: #1d455d;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 20px;
+  position: fixed;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.button:hover {
+  background-color: #112938;
+}
