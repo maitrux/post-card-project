@@ -3,7 +3,7 @@ import CardLink from "@/components/CardLink.vue";
 </script>
 
 <template>
-  <div class="container">
+  <div class="container all-posts-view">
     <div class="row">
       <div class="col-4" v-for="post in posts" :key="post.id">
         <CardLink
@@ -50,13 +50,14 @@ export default {
         for(const user of userReponse.data) {
           if(post.userId === user.id) {
             const postData = { id: post.id, title: post.title, body: post.body, name: user.name, username: user.username, email: user.email };
-            postArray.push(postData)
+            postArray.push(postData);
+
+            break;
           }
         }
       }
 
       this.posts = postArray;
-      console.log(this.posts)
     } catch (e) {
       console.error(e);
     }

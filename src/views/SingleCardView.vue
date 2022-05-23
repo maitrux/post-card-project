@@ -10,8 +10,14 @@ import { RouterLink, RouterView } from "vue-router";
     <div class="container">
       <div class="row">
         <div class="col-xs">
-          <Card />
-          <p>{{this.$route.params.id}}</p>
+          <Card 
+          :id="postData.id"
+  	      :title="postData.title"
+          :body="postData.body"
+          :name="postData.name"
+          :username="postData.username"
+          :email="postData.email" 
+          />
         </div>
       </div>
 
@@ -38,3 +44,38 @@ import { RouterLink, RouterView } from "vue-router";
   </div>
 
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+  components: {
+    Card
+  },
+  data() {
+    return {
+      postData: []
+    };
+  },
+  async created() {
+    try {
+      const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + this.$route.params.id);
+      const userResponse = await axios.get("https://jsonplaceholder.typicode.com/users");
+
+      const post = postResposnse.data;
+      const userId = post.userId;
+      
+      for(const user of userResponse.data) {
+        if(userId === user.id) {
+          const data = { id: post.id, title: post.title, body: post.body, name: user.name, username: user.username, email: user.email };
+          this.postData = data;
+          
+          break;
+        }
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+}
+</script>

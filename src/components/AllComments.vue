@@ -31,9 +31,6 @@ export default {
     try {
       const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + 1 + "/comments");
       this.comments = postResposnse.data;
-
-      console.log(this.comments)
-
     } catch (e) {
       console.error(e);
     }
