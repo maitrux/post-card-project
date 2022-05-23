@@ -2,37 +2,48 @@
 import CardLink from "@/components/CardLink.vue";
 </script>
 
+<script>
+  import axios from "axios";
+
+export default {
+  components: {
+    CardLink
+  },
+  data() {
+    return {
+      posts: []
+    };
+  },
+  async created() {
+    try {
+      const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
+      this.posts = res.data;
+    } catch (e) {
+      console.error(e);
+    }
+  }
+}
+</script>
+
 <template>
   <div class="container">
     <div class="row">
-      <div class="col-sm">
-        <CardLink />
-      </div>
-      <div class="col-sm">
-        <CardLink />
-      </div>
-      <div class="col-sm">
-        <CardLink />
+      <div class="col-4" v-for="post in posts" :key="post.id">
+        <CardLink
+  	      :title="post.title"
+          :body="post.body" 
+        />
       </div>
     </div>
 
     <div class="row">
       <div class="col-sm">
-        <CardLink />
-      </div>
-      <div class="col-sm">
-        <CardLink />
-      </div>
-      <div class="col-sm">
-        <CardLink />
+      <RouterLink to="/new-post">
+        <div class="add-post-button button">Add a new post</div>
+      </RouterLink> 
       </div>
     </div>
 
-     <div class="row">
-       <div class="col-sm">
-         <div class="add-post-button button">Add a new post</div>
-       </div>
-     </div>
   </div>
 </template>
 
@@ -44,3 +55,4 @@ import CardLink from "@/components/CardLink.vue";
   right: 1%;
 }
 </style>
+

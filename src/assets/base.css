@@ -2,12 +2,38 @@
   margin-top: 10px;
 }
 
+.margin-top-xl {
+  margin-top: 30px;
+}
+
 .margin-bottom-sm {
   margin-bottom: 10px;
 }
 
+.padding-right-sm {
+  padding-right: 10px;
+}
+
 .bold {
   font-weight: bold;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.narrow-page-container {
+  padding: 0px 20%;
+  animation: fadeInAnimation ease-in 0.5s;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
 }
 
 /* Buttons */
@@ -26,4 +52,9 @@
 
 .button:hover {
   background-color: #112938;
+}
+
+.return-button {
+bottom: 5%;
+left: 1%;
 }

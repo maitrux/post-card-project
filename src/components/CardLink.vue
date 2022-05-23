@@ -5,7 +5,10 @@ import Card from "@/components/Card.vue";
 
 <template>
   <RouterLink class="card-container" to="/post/1">
-    <Card />
+    <Card 
+      :body="body" 
+      :title="title"
+    />
   </RouterLink>
 </template>
 
@@ -31,3 +34,9 @@ import Card from "@/components/Card.vue";
 }
 
 </style>
+
+<script>
+export default {
+  props: ['title', 'body'] 
+}
+</script>

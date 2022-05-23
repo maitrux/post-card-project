@@ -4,8 +4,8 @@ import { RouterLink, RouterView } from "vue-router";
 
 <template>
   <div class="card">
-    <h2>sunt aut facere repellat provident occaecati excepturi optio reprehenderit</h2>
-    <p class="margin-top-sm">quia et suscipitnsuscipit recusandae consequuntur expedita et cumnreprehenderit molestiae ut ut quas totamnnostrum rerum est autem sunt rem eveniet architecto</p>
+    <h2>{{ title }}</h2>
+    <p class="margin-top-sm">{{ body }}</p>
     <div><text class="bold">Name: </text><text>Leanne Graham</text></div>
     <div><text class="bold">Username: </text><text>Bret</text></div>
     <div><text class="bold">E-mail: </text><text>Sincere@april.biz</text></div>
@@ -36,3 +36,9 @@ import { RouterLink, RouterView } from "vue-router";
 }
 
 </style>
+
+<script>
+export default {
+  props: ['title', 'body'] 
+}
+</script>
