@@ -66,7 +66,7 @@ export default {
         }
       }
     } catch (e) {
-      return this.$router.push('/404')
+      return this.$router.push('/404');
     }
   }
 }

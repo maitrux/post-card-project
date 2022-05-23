@@ -12,11 +12,6 @@ const router = createRouter({
       component: AllPostsView,
     },
     {
-      path: "/new-post",
-      name: "NewPostPage",
-      component: () => import("../views/NewPostView.vue"),
-    },
-    {
       path: "/post/:id",
       name: "SinglePostPage",
       component: SingleCardView,

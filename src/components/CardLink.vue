@@ -18,6 +18,6 @@ import Card from "@/components/Card.vue";
 
 <script>
 export default {
-  props: ['id', 'title', 'body', 'name', 'username', 'email'],
+  props: ['id', 'title', 'body', 'name', 'username', 'email']
 }
 </script>
