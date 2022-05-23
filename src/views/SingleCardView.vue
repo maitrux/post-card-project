@@ -21,7 +21,7 @@ import { RouterLink, RouterView } from "vue-router";
         </div>
       </div>
 
-      <AllComments :id="2" />
+      <AllComments :id="this.$route.params.id" />
     </div>
   </div>
 
