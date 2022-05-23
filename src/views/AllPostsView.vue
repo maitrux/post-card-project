@@ -59,6 +59,8 @@ export default {
       const userReponse = await axios.get("https://jsonplaceholder.typicode.com/users");
 
       const postArray = [];
+
+      // Match the corresponding user to the post.
       for(const post of postResposnse.data) {
         for(const user of userReponse.data) {
           if(post.userId === user.id) {
@@ -69,6 +71,10 @@ export default {
       }
 
       this.posts = postArray;
+
+      // Show cards from the newest to the oldest.
+      this.posts = this.posts.reverse();
+
     } catch (e) {
       console.error(e);
     }
@@ -76,16 +82,19 @@ export default {
   methods : {
     submit(e) {
       e.preventDefault();
+
+      // New posts are always created with the userId 1.
       const newPost = {title: this.title, body: this.body, userId: 1, name: "Leanne Graham", username: "Bret", email: "Sincere@april.biz"}
 
+      // POST the newest post to the server.
       axios.post('https://jsonplaceholder.typicode.com/posts', newPost)
         .then(function(response) {
           console.log(response)
         }.bind(this));
 
-         this.posts.push(newPost)
+      this.posts.push(newPost);
 
-      window.scrollTo(0, document.body.scrollHeight);
+      this.posts = this.posts.reverse();
     }
   },
 }

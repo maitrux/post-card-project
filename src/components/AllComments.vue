@@ -1,6 +1,5 @@
 <script setup>
 import Comment from "@/components/Comment.vue";
-import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
@@ -31,6 +30,7 @@ export default {
     try {
       const id = this.$route.params.id;
 
+      // Get the comments related to the post by using the post id.
       const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + id + "/comments");
       this.comments = postResposnse.data;
     } catch (e) {

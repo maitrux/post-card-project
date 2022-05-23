@@ -53,12 +53,14 @@ export default {
     try {
       const id = this.$route.params.id;
 
+      // Get the post data by its id.
       const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + id);
       const userResponse = await axios.get("https://jsonplaceholder.typicode.com/users");
 
       const post = postResposnse.data;
       const userId = post.userId;
       
+      // Match the user data to the post by using the userId.
       for(const user of userResponse.data) {
         if(userId === user.id) {
           const data = { id: post.id, title: post.title, body: post.body, name: user.name, username: user.username, email: user.email };
@@ -68,6 +70,7 @@ export default {
         }
       }
     } catch (e) {
+      // Redirect to the error page if the post is not found.
       return this.$router.push('/404');
     }
   }
