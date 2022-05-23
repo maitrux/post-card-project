@@ -6,9 +6,11 @@ import { RouterLink, RouterView } from "vue-router";
   <div class="card">
     <h2>{{ title }}</h2>
     <p class="margin-top-sm">{{ body }}</p>
-    <div><text class="bold">Name: </text><text>{{ name }}</text></div>
-    <div><text class="bold">Username: </text><text>{{ username }}</text></div>
-    <div><text class="bold">E-mail: </text><text>{{ email }}</text></div>
+    <div class="user-info">
+      <div><text class="bold">Name: </text><text>{{ name }}</text></div>
+      <div><text class="bold">Username: </text><text>{{ username }}</text></div>
+      <div><text class="bold">E-mail: </text><text>{{ email }}</text></div>
+    </div>
   </div>
 </template>
 
@@ -22,6 +24,11 @@ import { RouterLink, RouterView } from "vue-router";
 
 .card-container {
   text-decoration: none !important;
+}
+
+.all-posts-view .user-info {
+  position: absolute;
+  bottom: 15px;
 }
 
 .card {

@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
 import AllPostsView from "../views/AllPostsView.vue";
+import SingleCardView from "../views/SingleCardView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -16,9 +16,10 @@ const router = createRouter({
       component: () => import("../views/NewPostView.vue"),
     },
     {
-      path: "/post/1",
-      name: "post/1",
-      component: () => import("../views/SingleCardView.vue"),
+      path: "/post/:id",
+      name: "SinglePost",
+      component: SingleCardView,
+      props: true,
     },
   ],
 });

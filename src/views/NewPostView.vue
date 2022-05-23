@@ -1,6 +1,5 @@
 <script setup>
 import { RouterLink, RouterView } from "vue-router";
-import Card from "@/components/Card.vue";
 </script>
 
 <template>
@@ -13,12 +12,12 @@ import Card from "@/components/Card.vue";
 
             <form id="create-new-post" class="margin-top-xl">
               <div class="form-group">
-                <label for="exampleInputEmail1">Title</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter a title">
+                <label for="title">Title</label>
+                <input id="title" class="form-control" placeholder="Enter a title">
               </div>
               <div class="form-group margin-top-sm">
-                <label for="exampleFormControlTextarea1">Content</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="body">Content</label>
+                <textarea id="body" class="form-control" rows="3"></textarea>
               </div>
               <button id="create-new-post-button" type="submit" class="btn">Submit</button>
             </form>
@@ -39,6 +38,37 @@ import Card from "@/components/Card.vue";
     </div>
   </div>
 </template>
+
+
+// <script>
+// import axios from 'axios';
+
+// export default {
+//     name: 'NewPost',
+//     data() {
+//       return {
+//         form: {
+//           title: '',
+//           body: '',
+//           userId: '1',
+//         }
+//       }
+//     },
+//     methods: {
+//       submitForm(){
+//         axios.post('https://jsonplaceholder.typicode.com/posts', this.form)
+//           .then((res) => {
+//               console.log(this.form)
+//           })
+//           .catch((error) => {
+//               // error.response.status Check status code
+//           }).finally(() => {
+//               //Perform action in always
+//           });
+//       },
+//     }
+// }
+// </script>
 
 <style>
   .textarea {

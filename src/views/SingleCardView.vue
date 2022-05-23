@@ -1,8 +1,9 @@
 <script setup>
 import Card from "@/components/Card.vue";
-import Comment from "@/components/Comment.vue";
+import AllComments from "@/components/AllComments.vue";
 import { RouterLink, RouterView } from "vue-router";
 </script>
+
 
 <template>
   <div class="narrow-page-container">
@@ -10,14 +11,11 @@ import { RouterLink, RouterView } from "vue-router";
       <div class="row">
         <div class="col-xs">
           <Card />
+          <p>{{this.$route.params.id}}</p>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs">
-          <Comment />
-        </div>
-      </div>
+      <AllComments :id="this.$route.params.id" />
 
       <div class="row">
        <div class="col-sm">
