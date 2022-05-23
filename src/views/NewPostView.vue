@@ -32,7 +32,7 @@ import { RouterLink, RouterView } from "vue-router";
     <div class="row">
       <div class="col-sm">
         <RouterLink to="/">
-          <div class="return-button button">All posts</div>
+          <div class="return-button button button-fixed">All posts</div>
         </RouterLink>
       </div>
     </div>
@@ -69,23 +69,3 @@ import { RouterLink, RouterView } from "vue-router";
 //     }
 // }
 // </script>
-
-<style>
-  .textarea {
-    width: 100%;
-  }
-
-  #create-new-post-button {
-    background-color: #1d455d;
-    text-align: center;
-    padding: 10px;
-    border-radius: 4px;
-    color: #ffffff;
-    cursor: pointer;
-    width: 250px;
-    outline: none;
-    border: none;
-    margin-top: 20px;
-    float: right;
-  }
-</style>

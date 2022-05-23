@@ -1,3 +1,137 @@
+
+#app {
+  min-height: 100vh;
+  background-color: #9cc5dc;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+.textarea {
+  width: 100%;
+}
+
+.comment {
+  padding: 10px;
+  background-color: #112938;
+  border-radius: 4px;
+  margin-top: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.3s;
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+.blue-text {
+  color: #398ab9;
+}
+
+/* Containers */
+
+.narrow-page-container {
+  padding: 0px 20%;
+  animation: fadeInAnimation ease-in 0.5s;
+}
+
+.single-card-view-container {
+  padding: 0px 20%;
+}
+
+/* Card */
+
+.card-container {
+  text-decoration: none !important;
+}
+
+.card {
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 4px;
+  margin-top: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: 0.3s;
+  color: black !important;
+  text-decoration: none !important;
+}
+
+.card-container {
+  text-decoration: none !important;
+}
+.card-container .card {
+  height: 400px;
+  cursor: pointer;
+}
+.card-container .card:hover {
+  transform: scale(1.05);
+}
+
+.all-posts-view .user-info {
+  position: absolute;
+  bottom: 15px;
+}
+
+/* Buttons */
+
+#create-new-post-button {
+  background-color: #1d455d;
+  text-align: center;
+  padding: 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  cursor: pointer;
+  width: 250px;
+  outline: none;
+  border: none;
+  margin-top: 20px;
+  float: right;
+}
+
+.button {
+  background-color: #1d455d;
+  text-align: center;
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  text-decoration: none;
+  border: none;
+}
+
+.button.button-fixed {
+  position: fixed;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.not-found-page .button {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+}
+
+.button:hover {
+  background-color: #112938;
+}
+
+.return-button {
+bottom: 5%;
+left: 1%;
+}
+
+.add-post-button {
+  bottom: 5%;
+  right: 1%;
+}
+
+/* Margins */
+
 .margin-top-sm {
   margin-top: 10px;
 }
@@ -14,47 +148,12 @@
   padding-right: 10px;
 }
 
+/* General */
+
 .bold {
   font-weight: bold;
 }
 
 .text-align-center {
   text-align: center;
-}
-
-.narrow-page-container {
-  padding: 0px 20%;
-  animation: fadeInAnimation ease-in 0.5s;
-}
-
-@keyframes fadeInAnimation {
-  0% {
-      opacity: 0;
-  }
-  100% {
-      opacity: 1;
-   }
-}
-
-/* Buttons */
-
-.button {
-  background-color: #1d455d;
-  text-align: center;
-  padding: 20px;
-  border-radius: 10px;
-  color: #ffffff;
-  font-size: 20px;
-  position: fixed;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-}
-
-.button:hover {
-  background-color: #112938;
-}
-
-.return-button {
-bottom: 5%;
-left: 1%;
 }

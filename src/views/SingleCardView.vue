@@ -22,14 +22,6 @@ import { RouterLink, RouterView } from "vue-router";
       </div>
 
       <AllComments :id="this.$route.params.id" />
-
-      <div class="row">
-       <div class="col-sm">
-          <RouterLink to="/">
-            <div class="return-button button">Return</div>
-          </RouterLink>
-       </div>
-     </div>
     </div>
   </div>
 
@@ -37,7 +29,7 @@ import { RouterLink, RouterView } from "vue-router";
     <div class="row">
       <div class="col-sm">
         <RouterLink to="/">
-          <div class="return-button button">All posts</div>
+          <div class="return-button button button-fixed">All posts</div>
         </RouterLink>
       </div>
     </div>
@@ -74,7 +66,7 @@ export default {
         }
       }
     } catch (e) {
-      console.error(e);
+      return this.$router.push('/404')
     }
   }
 }

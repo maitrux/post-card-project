@@ -3,7 +3,6 @@ import Comment from "@/components/Comment.vue";
 import { RouterLink, RouterView } from "vue-router";
 </script>
 
-
 <template>
   <div class="row">
     <div class="col-xs" v-for="comment in comments" :key="comment.id">

@@ -20,7 +20,7 @@ import CardLink from "@/components/CardLink.vue";
     <div class="row">
       <div class="col-sm">
       <RouterLink to="/new-post">
-        <div class="add-post-button button">Add a new post</div>
+        <div class="add-post-button button button-fixed">Add a new post</div>
       </RouterLink> 
       </div>
     </div>
@@ -64,11 +64,3 @@ export default {
   }
 }
 </script>
-
-<style>
-@import "@/assets/base.css";
-.add-post-button {
-  bottom: 5%;
-  right: 1%;
-}
-</style>
