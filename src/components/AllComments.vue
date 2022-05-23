@@ -26,9 +26,12 @@ export default {
       comments: []
     };
   },
+  props: ['id'],
   async created() {
     try {
-      const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + 1 + "/comments");
+      const id = this.$route.params.id;
+
+      const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + id + "/comments");
       this.comments = postResposnse.data;
     } catch (e) {
       console.error(e);

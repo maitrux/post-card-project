@@ -64,8 +64,6 @@ export default {
           if(post.userId === user.id) {
             const postData = { id: post.id, title: post.title, body: post.body, name: user.name, username: user.username, email: user.email };
             postArray.push(postData);
-
-            break;
           }
         }
       }
