@@ -21,7 +21,7 @@ import { RouterLink, RouterView } from "vue-router";
         </div>
       </div>
 
-      <AllComments :id="this.$route.params.id" />
+      <AllComments :id="2" />
     </div>
   </div>
 
@@ -51,7 +51,9 @@ export default {
   },
   async created() {
     try {
-      const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + this.$route.params.id);
+      const id = this.$route.params.id;
+
+      const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + id);
       const userResponse = await axios.get("https://jsonplaceholder.typicode.com/users");
 
       const post = postResposnse.data;
