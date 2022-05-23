@@ -4,7 +4,6 @@ import CardLink from "@/components/CardLink.vue";
 
 <script>
   import axios from "axios";
-
 export default {
   components: {
     CardLink
@@ -17,7 +16,22 @@ export default {
   async created() {
     try {
       const res = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
-      this.posts = res.data;
+
+      const postResposnse = await axios.get(`https://jsonplaceholder.typicode.com/posts`);
+      const userReponse = await axios.get(`https://jsonplaceholder.typicode.com/users`);
+
+      const postArray = [];
+      for(const post of postResposnse.data) {
+        for(const user of userReponse.data) {
+          if(post.userId === user.id) {
+            const postData = { id: post.id, title: post.title, body: post.body, name: user.name, username: user.username, email: user.email };
+            postArray.push(postData)
+          }
+        }
+      }
+
+      this.posts = postArray;
+      console.log(postArray)
     } catch (e) {
       console.error(e);
     }
@@ -31,7 +45,10 @@ export default {
       <div class="col-4" v-for="post in posts" :key="post.id">
         <CardLink
   	      :title="post.title"
-          :body="post.body" 
+          :body="post.body"
+          :name="post.name"
+          :username="post.username"
+          :email="post.email" 
         />
       </div>
     </div>
@@ -49,10 +66,8 @@ export default {
 
 <style>
 @import "@/assets/base.css";
-
 .add-post-button {
   bottom: 5%;
   right: 1%;
 }
 </style>
-
