@@ -51,7 +51,7 @@ export default {
   },
   async created() {
     try {
-      const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + 2);
+      const postResposnse = await axios.get("https://jsonplaceholder.typicode.com/posts/" + this.$route.params.id);
       const userResponse = await axios.get("https://jsonplaceholder.typicode.com/users");
 
       const post = postResposnse.data;
